@@ -1,0 +1,549 @@
+:root {
+  --bg: #f6f5f9;
+  --bg-elevated: #ffffff;
+  --text: #141414;
+  --text-muted: #6b7280;
+  --accent: #111827;
+  --border-subtle: #e4e4ee;
+  --radius-lg: 18px;
+  --shadow-soft: 0 22px 60px rgba(15, 23, 42, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  margin: 0;
+  color: var(--text);
+  /* Editorial 背景：上淡光、下柔灰 */
+  background:
+    radial-gradient(circle at 0% 0%, #ffffff 0, #f3f4ff 26%, transparent 55%),
+    radial-gradient(circle at 90% 10%, #ffffff 0, #f5f7fb 30%, transparent 60%),
+    linear-gradient(to bottom, #f6f5f9 0, #f9fafb 40%, #f5f5f7 100%);
+}
+
+.page-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 顶部玻璃导航 */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  /* 关键：磨砂玻璃效果 */
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  /* 半透明一点，让下面的渐变透上来 */
+  background: rgba(247, 247, 252, 0.65);
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.32);
+}
+
+/* 导航内部布局 */
+.site-header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 左边名字 */
+.site-logo {
+  font-size: 18px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 右边导航容器 */
+.site-nav {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+/* 主体内容 */
+.page-main {
+  flex: 1;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 16px 24px 24px;
+  margin-top: 40px;
+}
+
+.site-footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* 字距 */
+h1 {
+  letter-spacing: -0.02em;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  min-height: 100vh;
+}
+
+/* --- About strip under cards --- */
+
+.home-about {
+  max-width: 1120px;
+  margin: 40px auto 56px;
+  padding: 24px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 64px;
+
+  /* 轻微的分割感，但不抢镜 */
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-muted); /* 你之前定义过 muted 文本就用它 */
+}
+
+/* 左侧 About 标题 + 正文 */
+.home-about-left h3 {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(15, 23, 42, 0.7);
+  margin: 0 0 10px;
+}
+
+.home-about-left p {
+  margin: 0;
+  max-width: 540px;
+  color: rgba(15, 23, 42, 0.72);
+}
+
+/* 右侧 “Currently open to” 区块 */
+.home-about-right {
+  text-align: right;
+  min-width: 260px;
+}
+
+.home-about-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(15, 23, 42, 0.55);
+  margin-bottom: 8px;
+}
+
+.home-about-roles {
+  margin: 0 0 4px;
+  font-weight: 500;
+  color: rgba(15, 23, 42, 0.78);
+}
+
+.home-about-location {
+  margin: 0;
+  color: rgba(15, 23, 42, 0.6);
+}
+
+/* 简单响应式：窄屏下改成上下两行 */
+@media (max-width: 768px) {
+  .home-about {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 20px 0;
+  }
+
+  .home-about-right {
+    text-align: left;
+  }
+}
+
+/* --- Footer --- */
+
+.site-footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.22);
+  margin-top: 40px;
+  padding: 18px 24px 24px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.site-footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+/* 左侧 */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-meta {
+  opacity: 0.9;
+}
+
+.footer-tagline {
+  opacity: 0.8;
+}
+
+/* 右侧 */
+.footer-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: rgba(15, 23, 42, 0.7);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 10.5px;
+}
+
+.footer-links a:hover {
+  color: rgba(15, 23, 42, 0.95);
+}
+
+.footer-meta-right {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  opacity: 0.75;
+}
+
+/* 窄屏：上下堆叠 */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 16px 20px 24px;
+  }
+
+  .site-footer-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-right {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+
+  .footer-meta-right {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+/* ------------------------------ */
+/* Lumi Case Study Page          */
+/* ------------------------------ */
+
+.case-page {
+  max-width: 1120px;
+  margin: 56px auto 96px;
+  padding: 0 24px 96px;
+  color: var(--text);
+}
+
+/* 顶部 breadcrumb 区 */
+.case-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 24px;
+  color: var(--text-muted);
+}
+
+.case-back-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+  transition: all 150ms ease-out;
+}
+
+.case-back-link:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.case-tag {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+}
+
+/* Hero 区域 */
+
+.case-hero {
+  margin-bottom: 40px;
+}
+
+.case-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.case-title {
+  font-size: 32px;
+  line-height: 1.18;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.case-intro {
+  max-width: 760px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* 元信息三列 */
+
+.case-meta-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.6fr;
+  gap: 24px;
+  margin-top: 28px;
+  padding: 20px 22px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.08);
+}
+
+.case-meta-grid h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.case-meta-grid p,
+.case-meta-grid ul {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.case-meta-grid ul {
+  padding-left: 18px;
+}
+
+/* Section 通用 */
+
+.case-section {
+  margin-top: 48px;
+}
+
+.case-section h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.case-section p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 760px;
+}
+
+.case-section-intro {
+  margin-bottom: 20px;
+}
+
+/* 双列列表 */
+
+.case-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.case-columns ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.case-columns li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* 视觉展示区域 */
+
+.case-gallery-block {
+  margin-top: 32px;
+  padding: 22px 20px 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.06);
+}
+
+.case-gallery-block h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.case-gallery-caption {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.case-gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+
+
+/* 工具列表 */
+
+.case-tools-list {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+
+.case-tools-list li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* About + License 双列 */
+
+.case-section-split {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
+}
+
+.case-section-split p {
+  max-width: none;
+}
+
+/* ============================== */
+/* Lumi Case Study — 图片统一样式 */
+/* ============================== */
+
+.case-gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+.case-image-wrapper {
+  width: min(100%, 820px);  /* 图片最大宽度 = 820px（高清 Figma 导出的最佳宽度） */
+  margin: 0 auto;
+}
+
+.case-image-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 0px;
+  display: block;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+
+  /* 防止模糊：告诉浏览器不要压缩插值 */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+
+/* 小屏幕自适应 */
+
+@media (max-width: 900px) {
+  .case-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .case-section-split {
+    grid-template-columns: 1fr;
+  }
+
+  .case-page {
+    margin-top: 40px;
+    padding: 0 16px 72px;
+  }
+
+  .case-title {
+    font-size: 26px;
+  }
+}
+
