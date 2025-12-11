@@ -44,7 +44,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Expertise strip：三条能力标签 */}
+      {/* Expertise strip */}
       <section
         style={{
           marginBottom: "36px",
@@ -73,7 +73,7 @@ export default function Home() {
           label="Case study · Brand system & UX"
           title="Lumi — Mattress Brand System & E-commerce UX"
           description="End-to-end brand system, information architecture, and high-fidelity flows for a science-forward mattress brand."
-          to="/lumi"
+          slug="lumi"
           tag="Real client work"
         />
 
@@ -81,7 +81,7 @@ export default function Home() {
           label="Case study · Webflow implementation"
           title="Drip Café — Concept Coffee E-commerce"
           description="Concept brand and Webflow build exploring clean product storytelling, landing layout, and interactions."
-          to="/drip-cafe"
+          slug="drip-cafe"
           tag="Concept · Webflow"
         />
 
@@ -89,33 +89,33 @@ export default function Home() {
           label="Case study · In progress"
           title="Project Three — 2026"
           description="A third case study focused on product UX — structure and layout defined; content in progress."
-          to="/project-three"
+          slug="project-three"
           tag="Work in progress"
         />
       </section>
 
       {/* About strip under cards */}
-<section className="home-about">
-  <div className="home-about-left">
-    <h3>About</h3>
-    <p>
-      I enjoy making interfaces feel calm, legible, and intentional while balancing visual
-      systems with the practical details of shipping front-end. Currently based in
-      Vancouver and open to roles that sit between product design and implementation.
-    </p>
-  </div>
+      <section className="home-about">
+        <div className="home-about-left">
+          <h3>About</h3>
+          <p>
+            I enjoy making interfaces feel calm, legible, and intentional while
+            balancing visual systems with the practical details of shipping
+            front-end. Currently based in Vancouver and open to roles that sit
+            between product design and implementation.
+          </p>
+        </div>
 
-  <div className="home-about-right">
-    <div className="home-about-label">Currently open to</div>
-    <p className="home-about-roles">
-      UI/UX designer · Front-end / UI engineer · Hybrid roles
-    </p>
-    <p className="home-about-location">
-      Vancouver · Remote (Canada-friendly time zones)
-    </p>
-  </div>
-</section>
-
+        <div className="home-about-right">
+          <div className="home-about-label">Currently open to</div>
+          <p className="home-about-roles">
+            UI/UX designer · Front-end / UI engineer · Hybrid roles
+          </p>
+          <p className="home-about-location">
+            Vancouver · Remote (Canada-friendly time zones)
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
@@ -135,10 +135,14 @@ function Pill({ children }) {
   );
 }
 
-function ProjectCard({ label, title, description, to, tag }) {
+function ProjectCard({ label, title, description, slug, tag }) {
+  // "/" (dev)  or  "/UIUXPortfolio2026/" (prod)
+  const base = import.meta.env.BASE_URL;
+  const href = `${base}${slug}`; // 拼出 "/lumi" 或 "/UIUXPortfolio2026/lumi"
+
   return (
     <a
-      href={to}
+      href={href}
       style={{
         display: "block",
         padding: "22px 22px 20px",
@@ -148,6 +152,8 @@ function ProjectCard({ label, title, description, to, tag }) {
         border: "1px solid rgba(148,163,184,0.15)",
         transition:
           "transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease",
+        textDecoration: "none",
+        color: "inherit",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = "translateY(-3px)";

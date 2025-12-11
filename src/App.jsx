@@ -8,14 +8,13 @@ import ProjectThree from "./pages/Pj3";
 
 export default function App() {
   return (
-    <BrowserRouter  basename={import.meta.env.BASE_URL}>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/lumi" element={<Lumi />} />
           <Route path="/drip-cafe" element={<DripCafe />} />
           <Route path="/project-three" element={<ProjectThree />} />
-          {/* 可以再加 /about /contact 等 */}
         </Routes>
       </Layout>
     </BrowserRouter>
