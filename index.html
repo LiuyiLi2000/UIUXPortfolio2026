@@ -7,6 +7,18 @@
     <title>liuyiportfolio2026</title>
     <script type="module" crossorigin src="/UIUXPortfolio2026/assets/index-tJWVn-Ai.js"></script>
     <link rel="stylesheet" crossorigin href="/UIUXPortfolio2026/assets/index-Br87QoZa.css">
+    <script>
+  (function () {
+    // If we were redirected from 404.html using a hash path,
+    // restore it to browser history so URLs look normal.
+    var l = window.location;
+    if (l.hash.startsWith("#/")) {
+      var newPath = l.hash.slice(1); // "/about"
+      window.history.replaceState(null, "", l.pathname.replace(/\/$/, "") + newPath + l.search);
+    }
+  })();
+</script>
+
   </head>
   <body>
     <div id="root"></div>
