@@ -1,5 +1,5 @@
 // src/App.jsx
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Lumi from "./pages/Pj1";
@@ -8,15 +8,16 @@ import ProjectThree from "./pages/Pj3";
 
 export default function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/lumi" element={<Lumi />} />
-          <Route path="/drip-cafe" element={<DripCafe />} />
-          <Route path="/project-three" element={<ProjectThree />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/lumi" element={<Lumi />} />
+        <Route path="/drip-cafe" element={<DripCafe />} />
+        <Route path="/project-three" element={<ProjectThree />} />
+
+        {/* 兜底，防止任何未知路径白屏 */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Layout>
   );
 }
