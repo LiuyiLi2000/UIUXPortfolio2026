@@ -76,7 +76,13 @@ export default function Home() {
           slug="lumi"
           tag="Real client work"
         />
-
+        <ProjectCard
+          label="Case study · Product UI & responsive"
+          title="DEX Trading Interface — Trade Page (Buy/Sell/Error)"
+          description="A data-dense trading UI with Buy/Sell/Error states across desktop, tablet, and mobile—focused on clarity, hierarchy, and layout stability."
+          slug="project-three"
+          tag="Responsive UI"
+        />
         <ProjectCard
           label="Case study · Webflow implementation"
           title="Drip Café — Concept Coffee E-commerce"
@@ -85,13 +91,7 @@ export default function Home() {
           tag="Concept · Webflow"
         />
 
-        <ProjectCard
-          label="Case study · In progress"
-          title="Project Three — 2026"
-          description="A third case study focused on product UX — structure and layout defined; content in progress."
-          slug="project-three"
-          tag="Work in progress"
-        />
+        
       </section>
 
       {/* About strip under cards */}

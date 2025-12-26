@@ -560,3 +560,73 @@ main {
   }
 }
 
+/* ============================== */
+/* Device Showcase: Tablet / Phone */
+/* Fixed width + horizontal row   */
+/* ============================== */
+
+/* 确保 gallery row 至少是可布局容器（desktop 也不会炸） */
+.case-gallery-row {
+  /* 如果你原来已经有 display/grid 布局，这条可能会改变 desktop。
+     所以我这里不强行写 display:flex。
+     device row 的 flex 我们在 JSX 里已强制打开。 */
+}
+
+/* device row 横排 + 可滚动 */
+.case-device-row {
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 8px 6px 14px;
+  gap: 24px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.case-device-row .case-image-wrapper {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  margin: 0;
+}
+
+/* 关键：不要被全局 img max-width: 100% 限制 */
+.case-device-row .case-image-wrapper img {
+  display: block;
+  height: auto;
+  max-width: none;
+  width: 100%;
+  image-rendering: auto;
+}
+
+/* Tablet 固定 768px 宽 */
+.case-device-row.tablet-row .case-image-wrapper {
+  width: 384px;
+}
+
+/* Phone 固定 375px 宽 */
+.case-device-row.phone-row .case-image-wrapper {
+  width: 300px;
+}
+
+/* 小屏：允许稍微缩小，但不超过原图宽度（避免放大糊） */
+@media (max-width: 820px) {
+  .case-device-row.tablet-row .case-image-wrapper {
+    width: min(768px, 92vw);
+  }
+  .case-device-row.phone-row .case-image-wrapper {
+    width: min(375px, 86vw);
+  }
+}
+
+/* 可选：滚动条更干净一点 */
+.case-device-row::-webkit-scrollbar {
+  height: 10px;
+}
+.case-device-row::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+}
+.case-device-row::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 999px;
+}
