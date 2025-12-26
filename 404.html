@@ -1,0 +1,24 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=./" />
+    <script>
+      // Single Page Apps for GitHub Pages
+      // Redirect from /something to /#/something (temporary) and then restore.
+      (function () {
+        var path = window.location.pathname;
+        var search = window.location.search || "";
+        var hash = window.location.hash || "";
+        // Keep the repo base path (e.g. /UIUXPortfolio2026/)
+        // and move the rest into hash for the SPA to read.
+        var repo = path.split("/").slice(0, 2).join("/") + "/";
+        var rest = path.replace(repo, "");
+        window.location.replace(repo + "#/" + rest + search + hash);
+      })();
+    </script>
+    <title>Redirecting…</title>
+  </head>
+  <body></body>
+</html>
