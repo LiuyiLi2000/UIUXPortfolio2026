@@ -10,14 +10,20 @@
     var params = new URLSearchParams(window.location.search);
     var p = params.get("p");
     var q = params.get("q");
+
+    // ✅ 必须与你 vite.config.js 的 base 一致
+    var repo = "/UIUXPortfolio2026";
+
     if (p) {
-      var newPath = p + (q ? "?" + q : "");
+      // p 通常是 "/lumi" 这种站内路径
+      var newPath = repo + p + (q ? "?" + q : "");
       window.history.replaceState(null, "", newPath);
     }
   })();
 </script>
 
-    <script type="module" crossorigin src="/UIUXPortfolio2026/assets/index-2dmrStG2.js"></script>
+
+    <script type="module" crossorigin src="/UIUXPortfolio2026/assets/index-D4ASlry6.js"></script>
     <link rel="stylesheet" crossorigin href="/UIUXPortfolio2026/assets/index-B4CtqPTa.css">
   </head>
   <body>
