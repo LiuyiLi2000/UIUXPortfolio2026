@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      // GitHub Pages SPA redirect (rafgraph style)
+      // Redirect to /UIUXPortfolio2026/?p=/lumi etc, so index.html can restore the path.
+      (function () {
+        var l = window.location;
+        var repo = "/UIUXPortfolio2026"; // ← 你的 repo 名
+        var path = l.pathname;
+
+        // 如果已经包含 repo 前缀，去掉它，让 p 只保存站内路径
+        if (path.indexOf(repo) === 0) path = path.slice(repo.length);
+
+        var newUrl =
+          l.protocol +
+          "//" +
+          l.host +
+          repo +
+          "/?p=" +
+          encodeURIComponent(path) +
+          (l.search ? "&q=" + encodeURIComponent(l.search.slice(1)) : "") +
+          l.hash;
+
+        l.replace(newUrl);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
