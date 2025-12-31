@@ -54,23 +54,17 @@ body {
   flex-direction: column;
 }
 
-/* 顶部玻璃导航 */
+/* 原有 header 保留 */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
-
-  /* 关键：磨砂玻璃效果 */
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
-
-  /* 半透明一点，让下面的渐变透上来 */
   background: rgba(247, 247, 252, 0.65);
-
   border-bottom: 1px solid rgba(148, 163, 184, 0.32);
 }
 
-/* 导航内部布局 */
 .site-header-inner {
   max-width: 1120px;
   margin: 0 auto;
@@ -80,7 +74,6 @@ body {
   justify-content: space-between;
 }
 
-/* 左边名字 */
 .site-logo {
   font-size: 18px;
   letter-spacing: 0.16em;
@@ -90,16 +83,88 @@ body {
   text-decoration: none;
 }
 
-/* 右边导航容器 */
-.site-nav {
-  display: flex;
-  gap: 20px;
+/* ✅ 统一 NavLink 样式（替代 inline style） */
+.site-navlink{
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  text-decoration: none;
   font-size: 14px;
 }
 
-/* 主体内容 */
-.page-main {
-  flex: 1;
+.site-navlink.active{
+  color: #111827;
+  border-bottom-color: #111827;
+}
+
+/* 桌面 / 移动端导航容器 */
+.site-nav { display: flex; align-items: center; gap: 20px; }
+.site-nav-mobile { display: none; }
+
+/* ✅ Apple-style menu button */
+.site-menu-btn{
+  height: 34px;
+  width: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  background: rgba(255,255,255,0.55);
+  color: rgba(17,24,39,0.92);
+  font-size: 18px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ✅ 下拉菜单（默认隐藏） */
+.site-menu{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  /* 关键：折叠 */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 220ms ease;
+}
+
+.site-menu.is-open{
+  max-height: 360px; /* 足够容纳菜单项 */
+}
+
+.site-menu-item{
+  display: block;
+  padding: 12px 8px;
+  text-decoration: none;
+  color: rgba(17,24,39,0.92);
+  font-size: 14px;
+  border-radius: 12px;
+}
+
+.site-menu-item:hover{
+  background: rgba(15,23,42,0.05);
+}
+
+.site-menu-sep{
+  height: 1px;
+  background: rgba(148, 163, 184, 0.26);
+  margin: 8px 0;
+}
+
+/* ✅ Mobile：降噪 */
+@media (max-width: 720px){
+  .site-header-inner{
+    padding: 12px 16px;
+  }
+
+  .site-nav-desktop{ display: none; }
+  .site-nav-mobile{ display: flex; gap: 12px; }
+
+  .site-logo{ font-size: 16px; }
 }
 
 /* Footer */
@@ -137,7 +202,7 @@ main {
 }
 
 /* Home */
- a { 
+a { 
   color: inherit;
   text-decoration: none;
 }
@@ -145,6 +210,7 @@ main {
 main {
   min-height: 100vh;
 }
+
 /* home */
 .p1home{
   max-width: 1120px;
@@ -158,9 +224,15 @@ main {
   border: 1px solid rgba(148,163,184,0.18);
   border-radius: 22px;
   box-shadow: 0 20px 56px rgba(15,23,42,0.10);
-  padding: 32px 40px 22px;
+
+  /* ✅ 关键：底部 padding 归零，裁切舞台在下面 */
+  padding: 32px 40px 0px;
+
   text-align: center;
   backdrop-filter: blur(10px);
+
+  /* ✅ 关键：圆角裁切（桌面裁一半靠这个） */
+  overflow: hidden;
 }
 
 /* kicker */
@@ -187,7 +259,7 @@ main {
   font-weight: 500;
 }
 
-/* ✅ 关键词强调（配合 JSX 里用 <strong className="p1em">trust-first</strong>） */
+/* 关键词强调 */
 .p1em{
   font-weight: 700;
   color: rgba(15,23,42,0.96);
@@ -201,28 +273,17 @@ main {
   color: var(--text-muted);
 }
 
-/* ✅ 设备图 */
-.p1device{
-  width: 100%;
-  max-width: 700px;
-  height: auto;
-  display: block;
-
-  /* 关键：更稳定的布局 */
-  margin: -5% auto 12px;
-  transform: translateY(-10px);
-
-  /* 你现在这条阴影很高级，保留，但稍微更“接触点”一点 */
-  filter: drop-shadow(0 12px 5px rgba(0,0,0,0.32));
-}
-
 /* CTA */
 .p1ctaRow{
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: -2%;
-  margin-bottom: 2%;
+  margin-top: 18px;
+  margin-bottom: 0px;
+
+  /* ✅ 让 z-index 生效 + 压到最上层 */
+  position: relative;
+  z-index: 5;
 }
 
 .p1btn{
@@ -237,17 +298,12 @@ main {
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
 }
 
-/* ✅ Primary：更利落的边界 + subtle inner highlight（更“贵”） */
 .p1btnPrimary{
   background: #3E1555;
   color: #fff;
-
-  /* 外部阴影更干净（不糊）+ 内发光一点点 */
   box-shadow:
     0 14px 28px rgba(15,23,42,0.16),
     inset 0 1px 0 rgba(255,255,255,0.18);
-
-  /* 1px 边框：比以前更“有重量” */
   border: 1px solid rgba(0,0,0,0.14);
 }
 
@@ -270,8 +326,67 @@ main {
 }
 
 .p1btnFull{ width: 100%; }
-
 .p1arrow{ color: inherit; opacity: .8; }
+
+/* ✅ Apple 风格：设备图舞台容器 */
+.p1deviceWrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  height: clamp(320px, 42vw, 520px);
+  overflow: hidden;
+  margin-top: -10%;
+
+  /* ✅ 让 z-index 生效 + 放在 CTA 下层 */
+  position: relative;
+  z-index: 1;
+}
+
+/* ✅ 设备图本体 */
+.p1device{
+  width: min(1200px, 100%);
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center top;
+
+  /* ✅ 关键：就算盖住也不抢点击 */
+  pointer-events: none;
+}
+
+
+/* ✅ Mobile：完整露出（不裁切） */
+@media (max-width: 640px){
+  .p1hero{
+    padding: 22px 18px 0px;
+    border-radius: 18px;
+  }
+
+  .p1title{ font-size: 30px; }
+  .p1sub{ font-size: 13px; }
+
+  .p1ctaRow{
+    margin-top: 14px;
+    margin-bottom: 10px;
+  }
+
+  .p1deviceWrap{
+    height: auto;       /* ✅ 放开 */
+    overflow: visible;  /* ✅ 不裁切 */
+    margin-top: -5%;
+  }
+
+  .p1device{
+    height: auto;       /* ✅ 图片按自身比例 */
+    object-fit: contain;
+    object-position: center;
+    
+    filter: drop-shadow(0 10px 18px rgba(0,0,0,0.20));
+  }
+}
+
 
 /* 下方两张卡 */
 .p1below{

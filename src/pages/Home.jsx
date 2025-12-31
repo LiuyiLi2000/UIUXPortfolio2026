@@ -21,17 +21,17 @@ export default function Home() {
         </h1>
 
         <p className="p1sub">E-commerce · Shipping, specs and decision flows</p>
-
-        {/* 如果你 CSS 里没有 .p1deviceWrap，也没关系；这个 div 不会影响布局 */}
-        <div className="p1deviceWrap">
-          <img className="p1device" src={heroImg2} alt="Lumi hero preview" />
-        </div>
-
         <div className="p1ctaRow">
           <a className="p1btn p1btnPrimary" href={`${base}lumi`}>
             View Lumi Case Study <span className="p1arrow">›</span>
           </a>
         </div>
+        {/* 如果你 CSS 里没有 .p1deviceWrap，也没关系；这个 div 不会影响布局 */}
+        <div className="p1deviceWrap">
+          <img className="p1device" src={heroImg2} alt="Lumi hero preview" />
+        </div>
+
+        
       </section>
 
       {/* 下方两张卡 */}

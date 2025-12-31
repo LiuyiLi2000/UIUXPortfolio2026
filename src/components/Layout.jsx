@@ -1,26 +1,60 @@
 import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function Layout({ children }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="page-root">
-      {/* 顶部导航 */}
       <header className="site-header">
         <nav className="site-header-inner">
-          {/* 左侧名字 */}
-          <Link to="/" className="site-logo">
+          <Link to="/" className="site-logo" onClick={() => setOpen(false)}>
             LIUYI LI
           </Link>
 
-          {/* 右侧导航 */}
-          <div className="site-nav">
+          {/* 桌面导航（保留） */}
+          <div className="site-nav site-nav-desktop">
             <NavItem to="/">Work</NavItem>
             <NavItem to="/about">About</NavItem>
             <NavItem to="/contact">Contact</NavItem>
           </div>
+
+          {/* 移动端：Work + Menu */}
+          <div className="site-nav site-nav-mobile">
+            <NavItem to="/" onClick={() => setOpen(false)}>Work</NavItem>
+
+            <button
+              className="site-menu-btn"
+              aria-label="Open menu"
+              aria-expanded={open}
+              onClick={() => setOpen(v => !v)}
+            >
+              ☰
+            </button>
+          </div>
         </nav>
+
+        {/* Mobile dropdown */}
+        <div className={`site-menu ${open ? "is-open" : ""}`}>
+          <NavLink to="/about" className="site-menu-item" onClick={() => setOpen(false)}>
+            About
+          </NavLink>
+          <NavLink to="/contact" className="site-menu-item" onClick={() => setOpen(false)}>
+            Contact
+          </NavLink>
+
+          <div className="site-menu-sep" />
+
+          <a className="site-menu-item" href="mailto:liliuyi1224@gmail.com">Email</a>
+          <a className="site-menu-item" href="https://www.linkedin.com/in/liuyi-li/" target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+          <a className="site-menu-item" href="https://github.com/LiuyiLi2000" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+        </div>
       </header>
 
-      {/* 页面主体 */}
       <main className="page-main">{children}</main>
 
       {/* Footer */}
