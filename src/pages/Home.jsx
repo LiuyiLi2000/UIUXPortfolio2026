@@ -1,226 +1,90 @@
 // src/pages/Home.jsx
+import heroImg from "../assets/hero.png";
+import dexImg from "../assets/Trade_Buy_Desktop.png";
+import heroImg2 from "../assets/hero2.png";
+
 export default function Home() {
-  return (
-    <div
-      style={{
-        maxWidth: "1120px",
-        margin: "0 auto",
-        padding: "40px 24px 80px",
-      }}
-    >
-      {/* 顶部介绍 */}
-      <section style={{ marginBottom: "32px" }}>
-        <p
-          style={{
-            fontSize: "14px",
-            letterSpacing: "0.18em",
-            textTransform: "uppercase",
-            color: "var(--text-muted)",
-            marginBottom: "8px",
-          }}
-        >
-          Portfolio 2026
-        </p>
-        <h1
-          style={{
-            fontSize: "34px",
-            lineHeight: 1.2,
-            margin: 0,
-            maxWidth: "640px",
-          }}
-        >
-          Content-focused UI/UX designer & front-end developer crafting calm,
-          visually balanced experiences.
-        </h1>
-        <p
-          style={{
-            marginTop: "16px",
-            maxWidth: "520px",
-            fontSize: "14px",
-            color: "var(--text-muted)",
-          }}
-        >
-          I design brand-driven interfaces and implement them in code.
-        </p>
-      </section>
-
-      {/* Expertise strip */}
-      <section
-        style={{
-          marginBottom: "36px",
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "8px",
-          fontSize: "12px",
-          color: "var(--text-muted)",
-        }}
-      >
-        <Pill>UX systems & flows</Pill>
-        <Pill>Brand & visual direction</Pill>
-        <Pill>React / Webflow implementation</Pill>
-      </section>
-
-      {/* Case Study 卡片区 */}
-      <section
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-          gap: "20px",
-          marginBottom: "40px",
-        }}
-      >
-        <ProjectCard
-          label="Case study · Brand system & UX"
-          title="Lumi — Mattress Brand System & E-commerce UX"
-          description="End-to-end brand system, information architecture, and high-fidelity flows for a science-forward mattress brand."
-          slug="lumi"
-          tag="Real client work"
-        />
-        <ProjectCard
-          label="Case study · Product UI & responsive"
-          title="DEX Trading Interface — Trade Page (Buy/Sell/Error)"
-          description="A data-dense trading UI with Buy/Sell/Error states across desktop, tablet, and mobile—focused on clarity, hierarchy, and layout stability."
-          slug="project-three"
-          tag="Responsive UI"
-        />
-        <ProjectCard
-          label="Case study · Webflow implementation"
-          title="Drip Café — Concept Coffee E-commerce"
-          description="Concept brand and Webflow build exploring clean product storytelling, landing layout, and interactions."
-          slug="drip-cafe"
-          tag="Concept · Webflow"
-        />
-
-        
-      </section>
-
-      {/* About strip under cards */}
-      <section className="home-about">
-        <div className="home-about-left">
-          <h3>About</h3>
-          <p>
-            I enjoy making interfaces feel calm, legible, and intentional while
-            balancing visual systems with the practical details of shipping
-            front-end. Currently based in Vancouver and open to roles that sit
-            between product design and implementation.
-          </p>
-        </div>
-
-        <div className="home-about-right">
-          <div className="home-about-label">Currently open to</div>
-          <p className="home-about-roles">
-            UI/UX designer · Front-end / UI engineer · Hybrid roles
-          </p>
-          <p className="home-about-location">
-            Vancouver · Remote (Canada-friendly time zones)
-          </p>
-        </div>
-      </section>
-    </div>
-  );
-}
-
-function Pill({ children }) {
-  return (
-    <span
-      style={{
-        padding: "4px 10px",
-        borderRadius: "999px",
-        border: "1px solid rgba(148,163,184,0.6)",
-        background: "rgba(255,255,255,0.7)",
-      }}
-    >
-      {children}
-    </span>
-  );
-}
-
-function ProjectCard({ label, title, description, slug, tag }) {
-  // "/" (dev)  or  "/UIUXPortfolio2026/" (prod)
   const base = import.meta.env.BASE_URL;
-  const href = `${base}${slug}`; // 拼出 "/lumi" 或 "/UIUXPortfolio2026/lumi"
 
   return (
-    <a
-      href={href}
-      style={{
-        display: "block",
-        padding: "22px 22px 20px",
-        borderRadius: "var(--radius-lg)",
-        background: "var(--bg-elevated)",
-        boxShadow: "var(--shadow-soft)",
-        border: "1px solid rgba(148,163,184,0.15)",
-        transition:
-          "transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease",
-        textDecoration: "none",
-        color: "inherit",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "translateY(-3px)";
-        e.currentTarget.style.boxShadow =
-          "0 22px 55px rgba(15,23,42,0.12)";
-        e.currentTarget.style.borderColor = "rgba(71,85,105,0.35)";
-        e.currentTarget.style.background = "rgba(255,255,255,0.98)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.boxShadow = "var(--shadow-soft)";
-        e.currentTarget.style.borderColor = "rgba(148,163,184,0.15)";
-        e.currentTarget.style.background = "var(--bg-elevated)";
-      }}
-    >
-      <p
-        style={{
-          fontSize: "11px",
-          letterSpacing: "0.16em",
-          textTransform: "uppercase",
-          color: "var(--text-muted)",
-          margin: 0,
-          marginBottom: "10px",
-        }}
-      >
-        {label}
-      </p>
-      <h2
-        style={{
-          fontSize: "18px",
-          lineHeight: 1.3,
-          margin: 0,
-          marginBottom: "10px",
-        }}
-      >
-        {title}
-      </h2>
-      <p
-        style={{
-          fontSize: "13px",
-          color: "var(--text-muted)",
-          margin: 0,
-          marginBottom: "16px",
-        }}
-      >
-        {description}
-      </p>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          fontSize: "12px",
-          color: "var(--text-muted)",
-        }}
-      >
-        <span
-          style={{
-            padding: "3px 8px",
-            borderRadius: "999px",
-            border: "1px solid rgba(148,163,184,0.6)",
-          }}
-        >
-          {tag}
-        </span>
-        <span>View case study →</span>
-      </div>
-    </a>
+    <main className="p1home">
+      {/* HERO：上字下图（白底） */}
+      <section className="p1hero">
+        <p className="p1kicker">Portfolio 2026</p>
+
+        <h1 className="p1title">
+          Designing <strong className="p1em">trust-first</strong> D2C experiences
+          <br />
+          <span className="p1muted">
+            under real <strong className="p1em">business constraints</strong>.
+          </span>
+        </h1>
+
+        <p className="p1sub">E-commerce · Shipping, specs and decision flows</p>
+
+        {/* 如果你 CSS 里没有 .p1deviceWrap，也没关系；这个 div 不会影响布局 */}
+        <div className="p1deviceWrap">
+          <img className="p1device" src={heroImg2} alt="Lumi hero preview" />
+        </div>
+
+        <div className="p1ctaRow">
+          <a className="p1btn p1btnPrimary" href={`${base}lumi`}>
+            View Lumi Case Study <span className="p1arrow">›</span>
+          </a>
+        </div>
+      </section>
+
+      {/* 下方两张卡 */}
+      <section className="p1below">
+        {/* 左：DEX */}
+        <article className="p1card">
+          <header className="p1cardHead">
+            <h2 className="p1cardTitle">Crypto Trading Platform</h2>
+            <p className="p1cardMeta">FinTech · Cryptocurrency</p>
+          </header>
+
+          {/* ✅ 修复：只保留一层 .p1media */}
+          <div className="p1media">
+            <img
+              className="p1mediaImg"
+              src={dexImg}
+              alt="DEX Trading Interface — Buy state (Desktop)"
+            />
+          </div>
+
+          <div className="p1cardFoot">
+            <a className="p1btn p1btnGhost p1btnFull" href={`${base}project-three`}>
+              View Case Study <span className="p1arrow">›</span>
+            </a>
+          </div>
+        </article>
+
+        {/* 右：Additional Selected Work */}
+        {/* ✅ 加上 p1cardRight，让右卡更“沉一点”更平衡 */}
+        <article className="p1card p1cardRight">
+          <header className="p1cardHead">
+            <h2 className="p1cardTitle">Additional Selected Work</h2>
+            <p className="p1cardMeta">Case studies & experiments</p>
+          </header>
+
+          <div className="p1list">
+            <a className="p1row" href={`${base}drip-cafe`}>
+              <span>Drip Café — Concept Coffee E-commerce</span>
+              <span className="p1rowArrow">›</span>
+            </a>
+
+            <a
+              className="p1row"
+              href="https://liuyili2000.github.io/Portfolio2025Web/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Front-end & interaction experiments</span>
+              <span className="p1rowArrow">↗</span>
+            </a>
+          </div>
+        </article>
+      </section>
+    </main>
   );
 }
