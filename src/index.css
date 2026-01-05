@@ -1062,3 +1062,164 @@ main {
   background: rgba(0, 0, 0, 0.04);
   border-radius: 999px;
 }
+
+/* =========================
+   About / Contact (p2)
+========================= */
+
+.p2page{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 28px 24px 96px;
+}
+
+.p2card{
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(148,163,184,0.18);
+  border-radius: 22px;
+  box-shadow: 0 20px 56px rgba(15,23,42,0.10);
+  padding: 34px 40px;
+}
+
+.p2kicker{
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.p2title{
+  margin: 0;
+  max-width: 880px;
+  font-size: 40px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.p2lead{
+  margin: 14px 0 0;
+  max-width: 820px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(15,23,42,0.78);
+}
+
+.p2grid{
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.p2panel{
+  border: 1px solid rgba(148,163,184,0.20);
+  background: rgba(255,255,255,0.70);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+}
+
+.p2h2{
+  margin: 0 0 8px;
+  font-size: 14px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(15,23,42,0.86);
+}
+
+.p2list{
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(15,23,42,0.78);
+  line-height: 1.65;
+  font-size: 14px;
+}
+
+.p2text{
+  margin: 0;
+  color: rgba(15,23,42,0.78);
+  line-height: 1.65;
+  font-size: 14px;
+}
+
+/* CTA buttons */
+.p2ctaRow{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.p2btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 13px;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.p2btnPrimary{
+  background: #3E1555;
+  color: #fff;
+  box-shadow:
+    0 14px 28px rgba(15,23,42,0.16),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+  border: 1px solid rgba(0,0,0,0.14);
+}
+
+.p2btnPrimary:hover{
+  transform: translateY(-1px);
+  box-shadow:
+    0 18px 40px rgba(15,23,42,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.20);
+}
+
+.p2btnGhost{
+  background: rgba(255,255,255,0.80);
+  color: rgba(15,23,42,0.92);
+  border: 1px solid rgba(148,163,184,0.28);
+}
+
+.p2btnGhost:hover{
+  transform: translateY(-1px);
+  border-color: rgba(148,163,184,0.40);
+}
+
+.p2arrow{ opacity: .85; }
+
+/* little note */
+.p2note{
+  margin-top: 18px;
+  border: 1px solid rgba(148,163,184,0.20);
+  background: rgba(255,255,255,0.65);
+  border-radius: 18px;
+  padding: 14px 16px;
+}
+
+.p2noteTitle{
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(15,23,42,0.86);
+}
+
+.p2noteText{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(15,23,42,0.72);
+}
+
+@media (max-width: 720px){
+  .p2card{
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+  .p2title{ font-size: 30px; }
+  .p2grid{ grid-template-columns: 1fr; }
+}
+
