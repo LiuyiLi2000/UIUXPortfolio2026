@@ -75,7 +75,7 @@ export default function Home() {
 
             <a
               className="p1row"
-              href="https://liuyili2000.github.io/Portfolio2025Web/"
+              href="https://liuyili2000.github.io/CodePortfolio/"
               target="_blank"
               rel="noopener noreferrer"
             >
