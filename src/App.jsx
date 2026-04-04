@@ -7,6 +7,8 @@ import Contact from "./pages/Contact";
 import Lumi from "./pages/Pj1";
 import DripCafe from "./pages/Pj2";
 import ProjectThree from "./pages/Pj3";
+import VisualMarketing from "./pages/VisualMarketing";
+import Game from "./pages/Game";
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
         <Route path="/lumi" element={<Lumi />} />
         <Route path="/drip-cafe" element={<DripCafe />} />
         <Route path="/project-three" element={<ProjectThree />} />
+        <Route path="/Game" element={<Game/>} />
+        <Route path="/VisualMarketing" element={<VisualMarketing />} />
 
         {/* 兜底，防止任何未知路径白屏 */}
         <Route path="*" element={<Navigate to="/" replace />} />

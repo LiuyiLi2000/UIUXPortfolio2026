@@ -1,14 +1,14 @@
 // src/pages/Home.jsx
-import heroImg from "../assets/hero.png";
-import dexImg from "../assets/Trade_Buy_Desktop.png";
 import heroImg2 from "../assets/hero2.png";
+import gameImg from "../assets/game-cover.png";
+import dexImg from "../assets/Trade_Buy_Desktop.png";
+import marketingImg from "../assets/marketing-cover.png";
 
 export default function Home() {
   const base = import.meta.env.BASE_URL;
 
   return (
     <main className="p1home">
-      {/* HERO：上字下图（白底） */}
       <section className="p1hero">
         <p className="p1kicker">Portfolio 2026</p>
 
@@ -20,30 +20,30 @@ export default function Home() {
           </span>
         </h1>
 
-        <p className="p1sub">E-commerce · Shipping, specs and decision flows</p>
+        <p className="p1sub">
+          E-commerce · Shipping, specs and decision flows
+        </p>
+
         <div className="p1ctaRow">
           <a className="p1btn p1btnPrimary" href={`${base}lumi`}>
             View Lumi Case Study <span className="p1arrow">›</span>
           </a>
         </div>
-        {/* 如果你 CSS 里没有 .p1deviceWrap，也没关系；这个 div 不会影响布局 */}
+
         <div className="p1deviceWrap">
           <img className="p1device" src={heroImg2} alt="Lumi hero preview" />
         </div>
-
-        
       </section>
 
-      {/* 下方两张卡 */}
       <section className="p1below">
-        {/* 左：DEX */}
+        
+
         <article className="p1card">
           <header className="p1cardHead">
             <h2 className="p1cardTitle">Crypto Trading Platform</h2>
             <p className="p1cardMeta">FinTech · Cryptocurrency</p>
           </header>
 
-          {/* ✅ 修复：只保留一层 .p1media */}
           <div className="p1media">
             <img
               className="p1mediaImg"
@@ -53,18 +53,69 @@ export default function Home() {
           </div>
 
           <div className="p1cardFoot">
-            <a className="p1btn p1btnGhost p1btnFull" href={`${base}project-three`}>
+            <a
+              className="p1btn p1btnGhost p1btnFull"
+              href={`${base}project-three`}
+            >
+              View Case Study <span className="p1arrow">›</span>
+            </a>
+          </div>
+        </article>
+        
+        <article className="p1card">
+          <header className="p1cardHead">
+            <h2 className="p1cardTitle">Interactive Experience</h2>
+            <p className="p1cardMeta">Unity · Gameplay flow · System feedback</p>
+          </header>
+
+          <div className="p1media">
+            <img
+              className="p1mediaImg"
+              src={gameImg}
+              alt="Interactive Unity game preview"
+            />
+          </div>
+
+          <div className="p1cardFoot">
+            <a
+              className="p1btn p1btnGhost p1btnFull"
+              href={`${base}Game`}
+            >
               View Case Study <span className="p1arrow">›</span>
             </a>
           </div>
         </article>
 
-        {/* 右：Additional Selected Work */}
-        {/* ✅ 加上 p1cardRight，让右卡更“沉一点”更平衡 */}
+        <article className="p1card">
+          <header className="p1cardHead">
+            <h2 className="p1cardTitle">Visual &amp; Marketing</h2>
+            <p className="p1cardMeta">
+              E-commerce campaigns · Retail visuals · Brand promotion
+            </p>
+          </header>
+
+          <div className="p1media">
+            <img
+              className="p1mediaImg"
+              src={marketingImg}
+              alt="Marketing and visual design preview"
+            />
+          </div>
+
+          <div className="p1cardFoot">
+            <a
+              className="p1btn p1btnGhost p1btnFull"
+              href={`${base}VisualMarketing`}
+            >
+              View Work <span className="p1arrow">›</span>
+            </a>
+          </div>
+        </article>
+
         <article className="p1card p1cardRight">
           <header className="p1cardHead">
-            <h2 className="p1cardTitle">Additional Selected Work</h2>
-            <p className="p1cardMeta">Case studies & experiments</p>
+            <h2 className="p1cardTitle">Other Work</h2>
+            <p className="p1cardMeta">Web project and front-end work</p>
           </header>
 
           <div className="p1list">
