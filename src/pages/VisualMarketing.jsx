@@ -38,16 +38,17 @@ export default function VisualMarketing() {
       </div>
 
       <section className="case-hero">
-        <p className="case-subtitle">Selected Marketing Work</p>
+        <p className="case-subtitle">Performance Marketing & Visual Systems</p>
         <h1 className="case-title">
           Conversion-oriented campaign visuals for e-commerce and retail
         </h1>
         <p className="case-intro">
-          A focused selection of marketing work centered on product visibility,
-          promotional clarity, and fast message recognition. Rather than
-          treating campaign graphics as decoration, this work approaches visual
-          design as a decision-making tool: what users notice first, what they
-          understand next, and what helps them act faster.
+          A selected body of work focused on campaign clarity, conversion
+          support, and fast message recognition across retail and social
+          channels. Rather than treating marketing visuals as decoration, this
+          work approaches design as a performance layer: what gets noticed
+          first, what communicates value fastest, and what reduces friction in
+          the path to action.
         </p>
       </section>
 
@@ -55,7 +56,8 @@ export default function VisualMarketing() {
         <h2>Featured Campaign</h2>
         <p className="case-section-intro">
           A seasonal promotional direction developed for a retail sales moment,
-          with attention to hierarchy, urgency, and product trust.
+          balancing urgency with product trust so the offer could attract
+          attention without weakening purchase confidence.
         </p>
 
         <div className="vm-feature-card">
@@ -76,41 +78,44 @@ export default function VisualMarketing() {
           </div>
 
           <div className="vm-feature-copy">
-            <h3>Designing for urgency without losing product credibility</h3>
+            <h3>Designing for conversion without losing product credibility</h3>
             <p>
-              The challenge was not simply to make the sale more visible, but to
-              prevent the promotion from overpowering the product. In
-              discount-led retail, urgency can drive attention quickly, but if
-              the product becomes secondary, the ad loses credibility. This
-              direction was designed to keep the sales message immediate while
-              preserving the bed as the main object being sold.
+              The challenge was not only to make a promotion visible, but to
+              preserve confidence in the product being sold. In discount-led
+              retail, urgency can capture attention quickly, but when the sales
+              layer overwhelms the product, the message becomes louder rather
+              than more persuasive. This direction was designed to keep the
+              offer immediate while maintaining the bed as the visual anchor of
+              the ad.
             </p>
 
             <div className="vm-points">
               <div className="vm-point">
-                <span className="vm-point-label">Core problem</span>
+                <span className="vm-point-label">Test objective</span>
                 <p>
-                  High-contrast pricing cues and promotional graphics can create
-                  fast attention, but they also risk turning the layout into a
-                  sale announcement rather than a product ad.
+                  Explore how much promotional dominance a campaign visual can
+                  carry before product clarity starts to drop and the ad begins
+                  to feel like a generic sale announcement rather than a
+                  product-led conversion asset.
                 </p>
               </div>
 
               <div className="vm-point">
                 <span className="vm-point-label">Design response</span>
                 <p>
-                  Reduced competing visual elements and used scale, spacing, and
-                  CTA placement to keep the offer legible without collapsing the
-                  product into background decoration.
+                  Reduced competing accents and used hierarchy, spacing, and CTA
+                  placement to keep the offer immediately legible while allowing
+                  the product to stay recognizable at first glance.
                 </p>
               </div>
 
               <div className="vm-point">
-                <span className="vm-point-label">Decision</span>
+                <span className="vm-point-label">Conversion rationale</span>
                 <p>
-                  The final direction intentionally softened some promotional
-                  dominance in order to restore product trust, making the piece
-                  more commercially usable rather than only louder.
+                  The final direction intentionally trades a small amount of
+                  visual aggression for stronger clarity, better product trust,
+                  and faster message understanding—more useful in a real
+                  conversion environment than simply making the design louder.
                 </p>
               </div>
             </div>
@@ -119,15 +124,16 @@ export default function VisualMarketing() {
       </section>
 
       <section className="case-section">
-        <h2>Context & Approach</h2>
+        <h2>Goal & Performance Approach</h2>
 
         <div className="vm-context-grid vm-context-grid-2">
           <div className="vm-context-card">
             <h3>Goal</h3>
             <p>
-              Create a campaign visual that communicates the sale immediately,
-              keeps the product recognizable, and supports quick decision-making
-              in a promotion-heavy retail context.
+              Create a campaign visual that communicates the promotion
+              immediately, keeps the product credible, and supports faster
+              purchase-oriented decision-making in a promotion-heavy retail
+              context.
             </p>
           </div>
 
@@ -135,24 +141,25 @@ export default function VisualMarketing() {
             <h3>Approach</h3>
             <ul className="vm-bullet-list">
               <li>Prioritized product visibility before decorative intensity</li>
-              <li>Strengthened pricing hierarchy through contrast and scale</li>
-              <li>Removed competing accents that weakened fast scanning</li>
+              <li>Used pricing hierarchy to support fast scanning</li>
+              <li>Reduced non-essential accents that diluted message order</li>
+              <li>Kept CTA and offer readable without collapsing product trust</li>
             </ul>
           </div>
         </div>
       </section>
 
       <section className="case-section">
-        <h2>Iteration: Promotion-heavy vs Product-first</h2>
+        <h2>A/B Direction Test: Promotion-heavy vs Product-first</h2>
         <p className="case-section-intro">
-          Two motion directions were explored to test how much visual weight
-          should be given to the discount message versus the product itself.
+          Two motion directions were explored to evaluate which composition more
+          effectively balanced urgency, product trust, and conversion clarity.
         </p>
 
         <div className="vm-ab-grid">
           <article className="vm-ab-card">
             <div className="vm-ab-top">
-              <span className="vm-ab-label">Initial direction</span>
+              <span className="vm-ab-label">Version A</span>
               <span className="vm-ab-badge">Promotion-heavy</span>
             </div>
 
@@ -174,21 +181,21 @@ export default function VisualMarketing() {
 
             <div className="vm-ab-copy">
               <p>
-                This version captured urgency faster, using stronger contrast
-                and more dominant sale language to make the promotion feel more
-                immediate.
+                This version pushes urgency harder, using stronger contrast and
+                more dominant discount framing to capture attention quickly.
               </p>
               <ul className="vm-bullet-list">
-                <li>Discount messaging takes visual priority</li>
-                <li>Typography is read before the product is registered</li>
-                <li>The ad feels louder, but product credibility drops</li>
+                <li>Promotional messaging takes visual priority</li>
+                <li>Typography is often registered before the product</li>
+                <li>Attention capture is fast, but product authority weakens</li>
+                <li>Higher urgency signal, lower product-first trust</li>
               </ul>
             </div>
           </article>
 
           <article className="vm-ab-card">
             <div className="vm-ab-top">
-              <span className="vm-ab-label">Final direction</span>
+              <span className="vm-ab-label">Version B</span>
               <span className="vm-ab-badge">Product-first</span>
             </div>
 
@@ -210,28 +217,29 @@ export default function VisualMarketing() {
 
             <div className="vm-ab-copy">
               <p>
-                The final direction reduced promotional dominance so the product
-                could carry more authority, even if that meant a slightly less
-                aggressive urgency signal.
+                The final direction reduces promotional dominance so the product
+                remains the anchor, allowing the offer to support conversion
+                rather than overpower comprehension.
               </p>
               <ul className="vm-bullet-list">
                 <li>Product presence is stronger and easier to trust</li>
-                <li>Offer and product support each other instead of competing</li>
-                <li>Cleaner hierarchy improves readability at speed</li>
+                <li>Offer and product reinforce each other instead of competing</li>
+                <li>Cleaner hierarchy supports faster scanning</li>
+                <li>Better suited for conversion-focused retail messaging</li>
               </ul>
             </div>
           </article>
         </div>
 
         <div className="vm-text-block">
-          <h3>Why the final direction works better</h3>
+          <h3>Why Version B supports conversion better</h3>
           <p>
-            The initial version achieves stronger attention capture, but at the
-            cost of product credibility: users can recognize the sale before
-            they understand what is being sold. The final version keeps the
-            promotion visible while re-establishing the product as the anchor of
-            the composition, which makes the overall message clearer and more
-            commercially persuasive.
+            Version A captures urgency more aggressively, but the sales layer
+            starts to dominate before users fully register what is being sold.
+            Version B improves message order: product first, offer second, CTA
+            third. That sequencing reduces decision friction, keeps the ad more
+            trustworthy, and creates a more commercially usable balance between
+            attention and persuasion.
           </p>
         </div>
       </section>
@@ -239,8 +247,8 @@ export default function VisualMarketing() {
       <section className="case-section">
         <h2>Social Content System for Retail Engagement</h2>
         <p className="case-section-intro">
-          Instagram content designed not only as visual promotion, but as an
-          ongoing channel for brand presentation, customer education, and
+          Instagram content designed not only as visual promotion, but as a
+          mixed channel for brand presentation, customer education, and repeated
           service communication in a retail setting.
         </p>
 
@@ -254,40 +262,41 @@ export default function VisualMarketing() {
           </div>
 
           <div className="vm-feature-copy">
-            <h3>Designing Instagram as both marketing and service layer</h3>
+            <h3>Designing Instagram as both a marketing and service layer</h3>
             <p>
               Instead of treating Instagram as a purely promotional feed, this
-              work reframed the channel into two layers: product posts that
-              shaped brand perception, and Story Highlights that externalized
-              repeated customer questions around store info, repair, policy, and
+              work reframed the channel into two performance functions: feed
+              content that shaped brand perception and supported product
+              desirability, and Story Highlights that externalized repeated
+              customer questions around store information, repair, policy, and
               insurance.
             </p>
 
             <div className="vm-points">
               <div className="vm-point">
-                <span className="vm-point-label">Challenge</span>
+                <span className="vm-point-label">Channel challenge</span>
                 <p>
                   The account needed to support multiple luxury eyewear brands
-                  while also answering practical questions in a format users
-                  could scan quickly on mobile.
+                  while also helping users find practical store information in a
+                  format that could be scanned quickly on mobile.
                 </p>
               </div>
 
               <div className="vm-point">
-                <span className="vm-point-label">Strategy</span>
+                <span className="vm-point-label">System strategy</span>
                 <p>
-                  Built the channel as a hybrid content system: feed content for
-                  tone and desirability, and highlight content for repeated
-                  service information and lower-friction access.
+                  Built the channel as a hybrid content system: feed posts for
+                  attraction and brand tone, Highlights for utility, repeated
+                  questions, and lower-friction information access.
                 </p>
               </div>
 
               <div className="vm-point">
                 <span className="vm-point-label">Business value</span>
                 <p>
-                  This reduced reliance on direct messages for basic questions,
-                  allowing the account to function as a lightweight retail
-                  communication layer rather than only a posting stream.
+                  This reduced dependence on direct messages for basic
+                  questions, making the account more useful as a lightweight
+                  retail support surface rather than only a posting stream.
                 </p>
               </div>
             </div>
@@ -298,9 +307,9 @@ export default function VisualMarketing() {
       <section className="case-section">
         <h2>Feed Directions: Brand tone across different labels</h2>
         <p className="case-section-intro">
-          Product posts were designed to shift tone depending on the brand
-          being featured, while keeping the content commercially legible and
-          aligned with retail selling goals.
+          Product posts were designed to shift tone depending on the label being
+          featured while staying commercially legible and usable in a retail
+          marketing context.
         </p>
 
         <div className="vm-social-feed-grid">
@@ -325,14 +334,15 @@ export default function VisualMarketing() {
             <div className="vm-text-block">
               <h3>Balenciaga</h3>
               <p>
-                A colder and more restrained direction, using cleaner structure
-                and a muted visual tone to support a sharper and more precise
-                brand identity.
+                A colder and more restrained direction, using tighter structure
+                and a muted visual tone to preserve sharp brand identity while
+                keeping the product central and easy to read.
               </p>
               <ul className="vm-bullet-list">
                 <li>Minimal layout reinforces brand restraint</li>
-                <li>Product stays central rather than overly stylized</li>
-                <li>Caption tone supports a more controlled fashion signal</li>
+                <li>Product remains central rather than overly stylized</li>
+                <li>Caption and visual tone support a more controlled signal</li>
+                <li>Commercial readability is preserved inside a fashion-led layout</li>
               </ul>
             </div>
           </article>
@@ -358,14 +368,15 @@ export default function VisualMarketing() {
             <div className="vm-text-block">
               <h3>Miu Miu</h3>
               <p>
-                A softer and more layered composition with stronger styling cues,
+                A softer and more layered direction with stronger styling cues,
                 allowing promotional messaging to feel lighter and more
-                fashion-led without losing readability.
+                fashion-led without losing scan speed or product readability.
               </p>
               <ul className="vm-bullet-list">
                 <li>More expressive composition and softer visual rhythm</li>
-                <li>Brand tone shifts without losing product readability</li>
+                <li>Brand tone shifts without losing product clarity</li>
                 <li>Promotional cues stay visible inside a styled layout</li>
+                <li>Supports desirability while remaining retail-usable</li>
               </ul>
             </div>
           </article>
@@ -374,10 +385,10 @@ export default function VisualMarketing() {
         <div className="vm-text-block">
           <h3>What this feed work demonstrates</h3>
           <p>
-            The value here is not only visual polish, but brand adaptability:
-            changing layout tone, pacing, and emphasis depending on the label,
-            while still keeping the post commercially useful and easy to
-            understand.
+            The value here is not only visual polish, but controlled adaptation:
+            changing layout tone, hierarchy, and emphasis depending on the brand
+            while still keeping the post useful for retail visibility, product
+            recognition, and quick user understanding.
           </p>
         </div>
       </section>
@@ -386,8 +397,8 @@ export default function VisualMarketing() {
         <h2>Story Highlights: Structuring repeated customer information</h2>
         <p className="case-section-intro">
           Story content was designed as a lightweight information system,
-          turning repeated customer questions into reusable assets that could
-          remain accessible through Highlights.
+          turning repeated customer questions into reusable assets that remain
+          accessible through Highlights.
         </p>
 
         <div className="vm-story-layout">
@@ -404,37 +415,37 @@ export default function VisualMarketing() {
           <div className="vm-story-copy">
             <h3>Using Story as a customer-service interface</h3>
             <p>
-              The Story system prioritized clarity and scannability over visual
-              expression. Instead of behaving like temporary decoration, these
-              assets made practical store information easier to revisit and
-              reduced friction in customer communication.
+              This Story system prioritized clarity and scannability over visual
+              expression. Instead of acting as temporary decoration, the assets
+              were organized to surface useful store information quickly and
+              reduce friction in customer communication.
             </p>
 
             <div className="vm-points">
               <div className="vm-point">
                 <span className="vm-point-label">Information design</span>
                 <p>
-                  Organized content into clear categories such as info, policy,
-                  repair, and FAQ so users could find answers without depending
-                  entirely on staff replies.
+                  Structured content into clear categories such as info, policy,
+                  repair, and FAQ so users could self-serve common questions
+                  without relying entirely on staff replies.
                 </p>
               </div>
 
               <div className="vm-point">
-                <span className="vm-point-label">Trade-off</span>
+                <span className="vm-point-label">Design trade-off</span>
                 <p>
                   Visual expression was intentionally reduced in favor of
-                  readability, because speed of understanding mattered more here
-                  than brand drama.
+                  readability because fast understanding mattered more here than
+                  stronger stylistic impact.
                 </p>
               </div>
 
               <div className="vm-point">
-                <span className="vm-point-label">Operational value</span>
+                <span className="vm-point-label">Operational outcome</span>
                 <p>
-                  By moving basic store questions into persistent highlights,
-                  Instagram became a more useful support surface for everyday
-                  retail interactions.
+                  By moving recurring store questions into persistent
+                  highlights, Instagram became a more structured support surface
+                  and a more efficient customer-facing channel.
                 </p>
               </div>
             </div>
@@ -473,12 +484,12 @@ export default function VisualMarketing() {
         </div>
 
         <div className="vm-text-block">
-          <h3>Why this matters in a marketing portfolio</h3>
+          <h3>Why this belongs in a performance-oriented portfolio</h3>
           <p>
             This work shows more than social posting. It demonstrates the
-            ability to use content design to support operations, reduce repeated
-            questions, and turn a social channel into something more structured,
-            useful, and business-aware.
+            ability to use content design to reduce repeated questions, improve
+            information access, and turn a social channel into something more
+            structured, useful, and operationally aware.
           </p>
         </div>
       </section>
@@ -487,27 +498,28 @@ export default function VisualMarketing() {
         <h2>What this work demonstrates</h2>
         <div className="vm-context-grid vm-context-grid-3">
           <div className="vm-context-card">
-            <h3>Campaign thinking</h3>
+            <h3>Performance thinking</h3>
             <p>
-              Ability to design with urgency, hierarchy, and message order in
-              mind rather than treating campaign graphics as purely decorative.
+              Ability to design around hierarchy, scan speed, and message order
+              so campaign visuals support attention and action rather than only
+              visual polish.
             </p>
           </div>
 
           <div className="vm-context-card">
-            <h3>Brand adaptability</h3>
+            <h3>A/B iteration mindset</h3>
             <p>
-              Comfort shifting visual language across different labels while
-              preserving product clarity, retail readability, and campaign
-              purpose.
+              Experience comparing alternate directions to evaluate how visual
+              emphasis changes urgency, product trust, and conversion clarity.
             </p>
           </div>
 
           <div className="vm-context-card">
             <h3>Content systems</h3>
             <p>
-              Experience using social content not only for promotion, but also
-              for repeated information delivery and customer-facing support.
+              Experience building social content not only for promotion, but
+              also for repeated information delivery, lower-friction access, and
+              customer-facing support.
             </p>
           </div>
         </div>
