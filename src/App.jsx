@@ -1,4 +1,3 @@
-// src/App.jsx
 import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
@@ -9,6 +8,7 @@ import DripCafe from "./pages/Pj2";
 import ProjectThree from "./pages/Pj3";
 import VisualMarketing from "./pages/VisualMarketing";
 import Game from "./pages/Game";
+import AI from "./pages/AIpipeline";
 
 export default function App() {
   return (
@@ -20,10 +20,9 @@ export default function App() {
         <Route path="/lumi" element={<Lumi />} />
         <Route path="/drip-cafe" element={<DripCafe />} />
         <Route path="/project-three" element={<ProjectThree />} />
-        <Route path="/Game" element={<Game/>} />
+        <Route path="/Game" element={<Game />} />
+        <Route path="/AI" element={<AI />} />
         <Route path="/VisualMarketing" element={<VisualMarketing />} />
-
-        {/* 兜底，防止任何未知路径白屏 */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Layout>

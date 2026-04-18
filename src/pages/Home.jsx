@@ -37,8 +37,8 @@ export default function Home() {
             View Case Study <span className="p1arrow">→</span>
           </a>
 
-          <a className="p1btn p1btnSecondary" href="#selected-work">
-            View Selected Work
+          <a className="p1btn p1btnSecondary" href={`${base}AI`}>
+            View AI Workflow
           </a>
         </div>
 
